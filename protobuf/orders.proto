@@ -5,7 +5,7 @@ option go_package = "github.com/adohong4/common/orders";
 
 service OrderService {
     rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse){}
-    rpc GetOrder(GetOrdersRequest) returns (GetOrderResponse) {}
+    rpc GetOrders(GetOrdersRequest) returns (GetOrderResponse) {}
 }
 
 message Order {

@@ -39,7 +39,7 @@ func (s *httpServer) Run() error {
 			log.Fatalf("client error: %v", err)
 		}
 
-		res, err := c.GetOrder(ctx, &orders.GetOrdersRequest{
+		res, err := c.GetOrders(ctx, &orders.GetOrdersRequest{
 			CustomerID: 42,
 		})
 		if err != nil {
@@ -47,6 +47,7 @@ func (s *httpServer) Run() error {
 		}
 
 		t := template.Must(template.New("orders").Parse(ordersTemplate))
+
 		if err := t.Execute(w, res.GetOrders()); err != nil {
 			log.Fatalf("template error: %v", err)
 		}

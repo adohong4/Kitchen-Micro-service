@@ -5,6 +5,7 @@ option go_package = "github.com/adohong4/common/orders";
 
 service OrderService {
     rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse){}
+    rpc GetOrder(GetOrdersRequest) returns (GetOrderResponse) {}
 }
 
 message Order {
@@ -24,7 +25,7 @@ message CreateOrderResponse {
     string status = 1;
 }
 
-message GetOrdersResponse {
+message GetOrdersRequest {
     int32 customerID = 1;
 }
 
